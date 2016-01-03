@@ -12,6 +12,7 @@ class KeyBindingResolverView extends View
       @div outlet: 'commands', class: 'panel-body padded'
 
   initialize: ->
+    @on 'click', '.command-icon', ({target}) => console.log(target)
     @on 'click', '.source', ({target}) => @openKeybindingFile(target.innerText)
 
   serialize: ->
@@ -60,7 +61,9 @@ class KeyBindingResolverView extends View
       @table class: 'table-condensed', =>
         if keyBinding
           @tr class: 'used', =>
-            @td class: 'command', keyBinding.command
+            @td class: 'command', =>
+              @span class: 'command-icon'
+              @span class: 'command-text', keyBinding.command
             @td class: 'selector', keyBinding.selector
             @td class: 'source', keyBinding.source
 
@@ -73,7 +76,7 @@ class KeyBindingResolverView extends View
         for binding in unmatchedKeyBindings
           @tr class: 'unmatched', =>
             @td class: 'command', binding.command
-            @td class: 'selector', binding.selector
+            @td class: 'selector', bindœing.selector
             @td class: 'source', binding.source
 
   updatePartial: (keystrokes, keyBindings) ->

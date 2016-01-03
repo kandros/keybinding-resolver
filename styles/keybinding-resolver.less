@@ -19,7 +19,7 @@
       color: rgb(251,58,55);
     }
 
-    .used:hover .command::before {
+    .used:hover .command-icon::before {
       cursor: pointer;
     }
 
@@ -31,15 +31,15 @@
       color: @text-color-subtle;
     }
 
-    .used .command, .unused .command{
+    .used .command-icon, .unused .command-icon{
       .octicon(check);
     }
 
-    .used .command:hover {
+    .used .command-icon:hover {
       .octicon(x);
     }
 
-    .unmatched .command
+    .unmatched .command-icon
      {
       .octicon(x);
     }
