@@ -15,15 +15,13 @@
       color: @text-color-success;
     }
 
-    .used:hover {
-      color: rgb(251,58,55);
-    }
-
-    .used:hover .command-icon::before {
+    .command-icon:hover::before {
       cursor: pointer;
+      color: @text-color-error;
     }
 
     .unused {
+
       color: @text-color;
     }
 
@@ -35,7 +33,7 @@
       .octicon(check);
     }
 
-    .used .command-icon:hover {
+    .command-icon:hover {
       .octicon(x);
     }
 

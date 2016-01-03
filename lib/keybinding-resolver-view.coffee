@@ -69,14 +69,18 @@ class KeyBindingResolverView extends View
 
         for binding in unusedKeyBindings
           @tr class: 'unused', =>
-            @td class: 'command', binding.command
+            @td class: 'command', =>
+              @span class: 'command-icon'
+              @span class: 'command-text', binding.command
             @td class: 'selector', binding.selector
             @td class: 'source', binding.source
 
         for binding in unmatchedKeyBindings
           @tr class: 'unmatched', =>
-            @td class: 'command', binding.command
-            @td class: 'selector', bindœing.selector
+            @td class: 'command', =>
+              @span class: 'command-icon'
+              @span class: 'command-text', binding.command
+            @td class: 'selector', binding.selector
             @td class: 'source', binding.source
 
   updatePartial: (keystrokes, keyBindings) ->
