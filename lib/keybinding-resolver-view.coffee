@@ -93,6 +93,7 @@ class KeyBindingResolverView extends View
     {resourcePath} = atom.getLoadSettings()
     pathToCheck.startsWith("#{resourcePath}#{path.sep}") and path.extname(resourcePath) is '.asar'
 
+
   extractBundledKeymap: (keymapPath) ->
     bundledKeymaps = require(path.join(atom.getLoadSettings().resourcePath, 'package.json'))?._atomKeymaps
     keymapName = path.basename(keymapPath)

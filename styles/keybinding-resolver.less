@@ -10,8 +10,17 @@
   }
 
   table {
+
     .used {
       color: @text-color-success;
+    }
+
+    .used:hover {
+      color: rgb(251,58,55);
+    }
+
+    .used:hover .command::before {
+      cursor: pointer;
     }
 
     .unused {
@@ -26,7 +35,12 @@
       .octicon(check);
     }
 
-    .unmatched .command {
+    .used .command:hover {
+      .octicon(x);
+    }
+
+    .unmatched .command
+     {
       .octicon(x);
     }
 
